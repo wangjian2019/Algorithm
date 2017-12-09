@@ -1,5 +1,10 @@
 package leetcode.array;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Top K Frequent Elements
  * 
@@ -18,7 +23,7 @@ public class TopKFrequentElements {
      * 1. hash，得到<元素，频次>键值对
      * 2. 因为频次小于n，建散列表，即新建大小为n+1的数组，数组下标为频次，数组内容为有相同频次的键值list，对散列表按下标由大到小遍历，找出k个键值
      */
-    public List<Integer> topKFrequent(int[] nums, int k) {
+    public List<Integer> topKFrequent1(int[] nums, int k) {
 
         List<Integer>[] bucket = new List[nums.length + 1];
         Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
@@ -47,7 +52,7 @@ public class TopKFrequentElements {
 
     //时间复杂度应该是：O(n log k)
     //空间复杂度是: O(k)
-    public List<Integer> topKFrequent(int[] nums, int k) {
+    public List<Integer> topKFrequent2(int[] nums, int k) {
         List<Integer> ret = new ArrayList<Integer>();
         if (nums == null || nums.length == 0 || k < 1) {
             return ret;

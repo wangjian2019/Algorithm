@@ -27,9 +27,9 @@ public class RecoverBinarySearchTree {
         inorder(root);
         //交换两个值
         if (first != null && second != null) {
-            int tmp = first.val;
-            first.val = second.val;
-            second.val = tmp;
+            int tmp = first.value;
+            first.value = second.value;
+            second.value = tmp;
         }
     }
 
@@ -41,7 +41,7 @@ public class RecoverBinarySearchTree {
         if (pre == null) {
             pre = root; //pre指针初始
         } else {
-            if (pre.val > root.val) {
+            if (pre.value > root.value) {
                 if (first == null) {
                     first = pre;//第一个逆序点
                 }

@@ -24,7 +24,7 @@ package leetcode.link;
  * 1->4->2->3
  * 
  */
-public class ReorderList{
+public class Reorderist{
 
     public void reorderList(ListNode head) {
         if (head == null || head.next == null){

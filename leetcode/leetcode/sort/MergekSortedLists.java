@@ -35,7 +35,7 @@ public class MergekSortedLists {
             return l1;
 
         ListNode l3;
-        if (l1.val < l2.val) {
+        if (l1.value < l2.value) {
             l3 = l1;
             l1 = l1.next;
         } else {
@@ -46,7 +46,7 @@ public class MergekSortedLists {
         ListNode fakehead = new ListNode(-1);
         fakehead.next = l3;
         while (l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
+            if (l1.value < l2.value) {
                 l3.next = l1;
                 l3 = l3.next;
                 l1 = l1.next;

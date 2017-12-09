@@ -1,5 +1,8 @@
 package leetcode.tree;
 
+import java.util.ArrayList;
+
+
 /**
  * Convert Sorted List to Binary Search Tree
  * 
@@ -27,10 +30,29 @@ public class ConvertSortedListtoBinarySearchTree {
             return null;
         int m = (l + r) / 2;
         TreeNode left = helper(list, l, m - 1);
-        TreeNode root = new TreeNode(list.get(0).val);
+        TreeNode root = new TreeNode(list.get(0).value);
         root.left = left;
         list.set(0, list.get(0).next);
         root.right = helper(list, m + 1, r);
         return root;
     }
+    
+    private class TreeNode {
+        public int value;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode(int value) {
+            this.value = value;
+        }
+    }
+    
+    private class ListNode {
+  		int value;
+  		ListNode next;
+
+  		ListNode(int value) {
+  			this.value = value;
+  		}
+  	}
 }

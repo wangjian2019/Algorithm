@@ -1,5 +1,8 @@
 package leetcode.link;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Copy List with Random Pointer
  * 

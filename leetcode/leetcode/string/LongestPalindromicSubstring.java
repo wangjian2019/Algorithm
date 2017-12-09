@@ -2,8 +2,8 @@ package leetcode.string;
 
 
 
-/**
- * Longest Palindromic Substring
+
+/** Longest Palindromic Substring
  * 
  * Given a string S, find the longest palindromic substring in S. You may assume that the maximum length
  * of S is 1000, and there exists one unique longest palindromic substring.
@@ -18,8 +18,7 @@ package leetcode.string;
  *                else max(f[i+1][j-1], f[i][j-1], f[i+1][j])
  * 方法三：动态规划，时间复杂度o(n^2)
  * 
- * / 
-
+ */ 
 public class LongestPalindromicSubstring{
     
     //方法一：是对于每个子串的中心（可以是一个字符，或者是两个字符的间隙，比如串abc,中心可以是a,b,c,或者是ab的间隙，bc的间隙，

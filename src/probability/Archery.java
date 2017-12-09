@@ -1,5 +1,9 @@
 package probability;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 面试题 一个人射箭，每次分数在0至10之间，已知射箭10次，得分是50分，编程计算总共有多少种可能？
  * 

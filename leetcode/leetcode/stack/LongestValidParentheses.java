@@ -1,5 +1,7 @@
 package leetcode.stack;
 
+import java.util.Stack;
+
 /**
  * Longest Valid Parentheses
  * 

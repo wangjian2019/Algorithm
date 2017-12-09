@@ -22,16 +22,16 @@ public class RemoveNthNodeFromEndOfList{
         ListNode q = dummy;
         // q 先走 n 步
         for (int i = 0; i < n; i++){
-            q = q->next;
+            q = q.next;
         } 
         // q,p一起走
-        while(q->next) { 
-            p = p->next;
-            q = q->next;
+        while(q.next != null) { 
+            p = p.next;
+            q = q.next;
         }
         ListNode tmp = p.next;
         p.next = p.next.next;
-        delete tmp;
+        //delete tmp;
         return dummy.next;
     }
 

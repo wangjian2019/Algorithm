@@ -29,7 +29,7 @@ public class MergeTwoSortedLists {
         ListNode fakehead = new ListNode(-1);
         fakehead.next = l3;
         while (l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
+            if (l1.value < l2.value) {
                 l3.next = l1;
                 l3 = l3.next;
                 l1 = l1.next;
@@ -60,7 +60,7 @@ public class MergeTwoSortedLists {
 		dummy.next = l3;
 
 		while (l1 != null && l2 != null) {
-			if (l1.val < l2.val) {
+			if (l1.value < l2.value) {
 				l3 = l1;
 				l3 = l3.next;
 				l1 = l1.next;
@@ -77,14 +77,5 @@ public class MergeTwoSortedLists {
 		if (l2 != null)
 			l3 = l2;
 		return dummy.next;
-	}
-
-    private class ListNode {
-		int value;
-		ListNode next;
-
-		ListNode(int value) {
-			this.value = value;
-		}
 	}
 }

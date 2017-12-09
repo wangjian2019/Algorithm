@@ -25,9 +25,9 @@ public class BalancedBinaryTree {
             return 0;
         int left = balancedHeight(root.left);
         int right = balancedHeight(root.right);
-        if (left < 0 || right < 0 || abs(left - right) > 1)
+        if (left < 0 || right < 0 || Math.abs(left - right) > 1)
             return -1; // 剪枝
-        return max(left, right) + 1; // 三方合并
+        return Math.max(left, right) + 1; // 三方合并
     }
 
     private class TreeNode {

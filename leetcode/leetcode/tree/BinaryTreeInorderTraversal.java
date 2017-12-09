@@ -1,5 +1,8 @@
 package leetcode.tree;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Binary Tree Inorder Traversal
@@ -53,9 +56,9 @@ public class BinaryTreeInorderTraversal{
         p = root;
         List<Integer> result = new ArrayList<Integer>(); 
 		if(root != null){
-		    preOrderRecursion(p.left);
+			preorderTraversal2(p.left);
             result.add(p.value);
-		    preOrderRecursion(p.right);	
+            preorderTraversal2(p.right);	
 		}
 	}
 

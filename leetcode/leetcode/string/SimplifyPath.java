@@ -1,5 +1,6 @@
 package leetcode.string;
 
+import java.util.LinkedList;
 
 /**
  * Simplify Path

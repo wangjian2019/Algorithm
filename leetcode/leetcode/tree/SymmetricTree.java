@@ -1,5 +1,7 @@
 package leetcode.tree;
 
+import java.util.Stack;
+
 /**
  * 
  * Symmetric Tree
@@ -11,35 +13,33 @@ package leetcode.tree;
  * 
  */
 public class SymmetricTree {
-    bool isSymmetric(TreeNode root) {
-        return root ? isSymmetric(root.left, root.right) : true;
+    boolean isSymmetric1(TreeNode root) {
+        return root != null ? isSymmetric(root.left, root.right) : true;
     }
 
-    bool isSymmetric(TreeNode left, TreeNode right) {
-        if (!left && !right)
+    boolean isSymmetric(TreeNode left, TreeNode right) {
+        if (left != null && right != null)
             return true; // 终止条件
-        if (!left || !right)
+        if (left != null || right != null)
             return false; // 终止条件
-        return left.val == right.val // 三方合并
+        return left.value == right.value // 三方合并
                 && isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left);
     }
 
-    bool isSymmetric(TreeNode root) {
-        if (!root)
+    boolean isSymmetric2(TreeNode root) {
+        if (root != null)
             return true;
-        stack<TreeNode> s;
+        Stack<TreeNode> s = new Stack<>();
         s.push(root.left);
         s.push(root.right);
         while (!s.empty()) {
-            auto p = s.top();
-            s.pop();
-            auto q = s.top();
-            s.pop();
-            if (!p && !q)
+        	TreeNode p = s.pop();
+            TreeNode q = s.pop();
+            if (p != null && q != null )
                 continue;
-            if (!p || !q)
+            if (p != null  || q != null )
                 return false;
-            if (p.val != q.val)
+            if (p.value != q.value)
                 return false;
             s.push(p.left);
             s.push(q.right);

@@ -25,7 +25,7 @@ import java.util.Map;
  * 把字符串中的字符排序后，若都相等则为同一组。
  * 
  */
-public class Anagrams {
+public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
         for (String s : strs) {

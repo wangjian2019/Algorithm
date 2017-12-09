@@ -1,5 +1,7 @@
 package leetcode.tree;
 
+import java.util.Stack;
+
 /**
  * 
  * 
@@ -25,38 +27,38 @@ package leetcode.tree;
  * 
  */
 public class FlattenBinaryTreetoLinkedList {
-    public void flatten(TreeNode root) {
+	
+    public void flatten1(TreeNode root) {
         if (root == null)
             return; // 终止条件
-        flatten(root.left);
-        flatten(root.right);
+        flatten1(root.left);
+        flatten1(root.right);
         if (null == root.left)
             return;
         // 三方合并，将左子树所形成的链表插入到 root 和 root.right 之间
         TreeNode p = root.left;
-        while (p.right)
+        while (p.right != null)
             p = p.right; //寻找左链表最后一个节点
         p.right = root.right;
         root.right = root.left;
-        root.left = nullptr;
+        root.left = null;
     }
 
     //前序遍历，把遍历到的元素逐个放入Linkedlist中
-    void flatten(TreeNode root) {
+    void flatten2(TreeNode root) {
         if (root == null)
             return;
-        stack<TreeNode> s;
+        Stack<TreeNode> s = new Stack<>();
         s.push(root);
         while (!s.empty()) {
-            auto p = s.top();
-            s.pop();
-            if (p.right)
+        	TreeNode p = s.pop();
+            if (p.right != null)
                 s.push(p.right);
-            if (p.left)
+            if (p.left != null)
                 s.push(p.left);
             p.left = null;
             if (!s.empty())
-                p.right = s.top();
+                p.right = s.pop();
         }
     }
 

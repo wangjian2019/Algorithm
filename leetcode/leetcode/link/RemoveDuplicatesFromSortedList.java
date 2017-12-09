@@ -58,7 +58,7 @@ public class RemoveDuplicatesFromSortedList {
 
 		boolean flag = false;
 		while (ptr2 != null) {
-			if (ptr1.val == ptr2.val) {
+			if (ptr1.value == ptr2.value) {
 				flag = true;
 				ptr2 = ptr2.next;
 				if (ptr2 == null)

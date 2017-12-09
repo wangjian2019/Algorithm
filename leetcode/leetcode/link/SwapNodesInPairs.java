@@ -29,7 +29,7 @@ public class SwapNodesInPairs {
         }
         //在头节点前，设置一个dummyNode节点s
         ListNode dummyNode = new ListNode(-1);
-        fakehead.next = head;
+        dummyNode.next = head;
         //ptr1始终指向需要交换的pair的前面一个node，ptr2始终指向需要交换的pair的第一个node。
         ListNode ptr1 = dummyNode;
         ListNode ptr2 = head;

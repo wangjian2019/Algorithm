@@ -1,5 +1,6 @@
 package leetcode.tree;
 
+
 /**
  * 
  * 
@@ -10,14 +11,24 @@ Assume a BST is defined as follows:
 Both the left and right subtrees must also be binary search trees
  */
 public class ValidateBinarySearchTree {
-    bool isValidBST(TreeNode root) {
-        return isValidBST(root, INT_MIN, INT_MAX);
+    boolean isValidBST(TreeNode root) {
+        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    bool isValidBST(TreeNode root, int lower, int upper) {
+    boolean isValidBST(TreeNode root, int lower, int upper) {
         if (root == null)
             return true;
-        return root.val > lower && root.val < upper && isValidBST(root.left, lower, root.val)
-                && isValidBST(root.right, root.val, upper);
+        return root.value > lower && root.value < upper && isValidBST(root.left, lower, root.value)
+                && isValidBST(root.right, root.value, upper);
+    }
+    
+    private class TreeNode {
+        public int value;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode(int value) {
+            this.value = value;
+        }
     }
 }

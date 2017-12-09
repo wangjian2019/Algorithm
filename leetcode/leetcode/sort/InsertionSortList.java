@@ -47,7 +47,7 @@ public class InsertionSortList {
             //每次循环开始的时候，pre必须退回到头结点上，从头开始走,寻找插入的地方
             ListNode pre = sortedlisthead;
             //pre必须指向要插入节点的前一个节点
-            while (pre.next != null && pre.next.val < cur.val){
+            while (pre.next != null && pre.next.value < cur.value){
                 pre = pre.next;
             }
             //将待排序元素插入点对应的位置，也就是改变指针的指向    

@@ -1,6 +1,8 @@
 package leetcode.tree;
 
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Binary Tree Postorder Traversal
@@ -68,8 +70,8 @@ public class BinaryTreePostorderTraversal{
         p = root;
         List<Integer> result = new ArrayList<Integer>(); 
 		if(root != null){
-		    preOrderRecursion(p.left);
-		    preOrderRecursion(p.right);
+			preorderTraversal2(p.left);
+			preorderTraversal2(p.right);
             result.add(p.value);	
 		}
 	}
